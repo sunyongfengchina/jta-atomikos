@@ -1,0 +1,49 @@
+#数据源配置
+spring:
+  jta:
+    enabled: true
+    service: com.atomikos.icatch.standalone.UserTransactionServiceFactory
+    max-actives: 200
+    enable-logging: false
+    atomikos:
+      datasource:
+        datasourcebaplocal:
+          unique-resource-name: datasourcebaplocal
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          min-pool-size: 20
+          max-pool-size: 200
+          xa-properties:
+            URL: jdbc:mysql://127.0.0.1:3306/local
+            user: local
+            password: local
+        datasourcebaphs:
+          unique-resource-name: datasourcebaphs
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          min-pool-size: 20
+          max-pool-size: 200
+          xa-properties:
+            URL: jdbc:mysql://127.0.0.1:3306/local
+            user: local
+            password: local
+        datasourcelzerp:
+          unique-resource-name: datasourcelzerp
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          min-pool-size: 20
+          max-pool-size: 200
+          xa-properties:
+            URL: jdbc:mysql://127.0.0.1:3306/local
+            user: local
+            password: local
+        datasourcenb:
+          unique-resource-name: datasourcenb
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          min-pool-size: 20
+          max-pool-size: 200
+          xa-properties:
+            URL: jdbc:mysql://127.0.0.1:3306/local
+            user: local
+            password: local
+    log-dir: /home/app/sxpservice/logs/xa/
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*/*Mapper.xml
